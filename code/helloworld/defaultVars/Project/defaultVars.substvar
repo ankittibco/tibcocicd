@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
+	<globalVariables>
+		<globalVariable>
+			<name>FileName</name>
+			<value>HelloWorldTest.txt</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1591143869489</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>FilePath</name>
+			<value>Test\</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1591143883834</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>ProjPath</name>
+			<value>C:\AnkitDrive\github\tibcocicd\code\helloworld\</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1591143823091</modTime>
+		</globalVariable>
+	</globalVariables>
+</repository>
