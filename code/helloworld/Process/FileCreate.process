@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns1="http://www.tibco.com/namespaces/tnt/plugins/file">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns2="www.tibco.com/plugin/Timer" xmlns:ns1="http://www.tibco.com/namespaces/tnt/plugins/file">
     <pd:name>Process/FileCreate.process</pd:name>
-    <pd:startName>Start</pd:startName>
-    <pd:startX>150</pd:startX>
-    <pd:startY>64</pd:startY>
+    <pd:startName>Timer</pd:startName>
+    <pd:startX>0</pd:startX>
+    <pd:startY>0</pd:startY>
     <pd:returnBindings/>
+    <pd:starter name="Timer">
+        <pd:type>com.tibco.plugin.timer.TimerEventSource</pd:type>
+        <pd:resourceType>ae.activities.timer</pd:resourceType>
+        <pd:x>150</pd:x>
+        <pd:y>63</pd:y>
+        <config>
+            <StartTime>1591147123000</StartTime>
+            <Frequency>false</Frequency>
+            <TimeInterval>1</TimeInterval>
+            <FrequencyIndex>Minute</FrequencyIndex>
+        </config>
+        <pd:inputBindings/>
+    </pd:starter>
     <pd:endName>End</pd:endName>
     <pd:endX>469</pd:endX>
     <pd:endY>64</pd:endY>
@@ -32,7 +45,7 @@
         <pd:type>com.tibco.plugin.file.FileWriteActivity</pd:type>
         <pd:resourceType>ae.activities.FileWriteActivity</pd:resourceType>
         <pd:x>365</pd:x>
-        <pd:y>63</pd:y>
+        <pd:y>62</pd:y>
         <config>
             <encoding>text</encoding>
             <compressFile>None</compressFile>
@@ -44,13 +57,13 @@
                     <xsl:value-of select="$Create-File/ns1:CreateActivityOutputClass/fileInfo/fullName"/>
                 </fileName>
                 <textContent>
-                    <xsl:value-of select="current-dateTime()"/>
+                    <xsl:value-of select="concat(current-date(), &quot;, Hour : &quot;, $Timer/ns2:TimerOutputSchema/Hour,&quot;, Min : &quot;,$Timer/ns2:TimerOutputSchema/Minute,&quot; Sec : &quot;,$Timer/ns2:TimerOutputSchema/Second)"/>
                 </textContent>
             </ns1:WriteActivityInputTextClass>
         </pd:inputBindings>
     </pd:activity>
     <pd:transition>
-        <pd:from>Start</pd:from>
+        <pd:from>Timer</pd:from>
         <pd:to>Create File</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
