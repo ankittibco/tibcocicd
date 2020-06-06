@@ -1,1 +1,0 @@
-buildear.exe -s -ear code/helloworld/ -o C:\AnkitDrive\jenkins_ws\helloworld.ear -p D:\Aman\Jenkins_Workspace\helloworld

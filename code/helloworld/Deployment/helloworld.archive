@@ -10,11 +10,15 @@
             <authorProperty>Ankit.Goel</authorProperty>
             <processProperty>/Process/FileCreate.process</processProperty>
         </processArchive>
-        <versionProperty>1</versionProperty>
+        <versionProperty>5</versionProperty>
         <authorProperty>Ankit.Goel</authorProperty>
         <addServiceSettableGvars>true</addServiceSettableGvars>
         <name>helloworld</name>
-        <designer/>
-        <fileLocationProperty>C:\Users\ankit.goel\helloworld.ear</fileLocationProperty>
+        <designer>
+            <lockedProperties/>
+            <fixedChildren/>
+            <resourceDescriptions/>
+        </designer>
+        <fileLocationProperty>C:\AnkitDrive\jenkins_ws\helloworld\helloworld.ear</fileLocationProperty>
     </enterpriseArchive>
 </Repository:repository>
