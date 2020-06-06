@@ -3,7 +3,7 @@ Set-Location "C:\tibco\designer\5.10\bin"
 
 # Executes validateproject
 # VERY IMPORTANT –  "-a" sets the alias library references. It's crucial for the #validation process
-$tmp = .\validateproject.exe -a "C:\TibcoData\properties\FileAlias.properties" $ENV:WORKSPACE
+$tmp = .\validateproject.exe -a "C:\AnkitDrive\jenkins_ws\helloworld\FileAlias.properties" C:\AnkitDrive\github\tibcocicd\code\helloworld
 
 # write output to console just for tracing
 echo $tmp;
